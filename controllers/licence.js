@@ -96,7 +96,7 @@ export const checkLicence = async (req, res) =>
             var thisDate = new Date();
             if (licence.status == 1 &&
                 thisDate.getTime() >= licence.start.getTime() &&
-                thisDate.getTime() <= licence.end.getTime())
+                thisDate.getTime() < licence.end.getTime())
             {
                 if (licence.serial == serial)
                 {
