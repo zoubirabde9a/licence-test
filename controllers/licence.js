@@ -100,7 +100,11 @@ export const checkLicence = async (req, res) =>
             {
                 if (licence.serial == serial)
                 {
-                    res.status(200).json(licence);
+                    var daysLeft = (licence.end.getTime() - thisDate.getTime()) / (1000*60*60*24);
+                    console.log("licence " + licence.end.getTime());
+                    console.log("now " + thisDate.getTime());
+                    console.log("diff " + ((licence.end.getTime() - thisDate.getTime()) / (1000*60*60*24)));
+                    res.status(200).json({daysLeft: daysLeft});
                 }
                 else
                 {
