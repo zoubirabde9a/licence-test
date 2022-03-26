@@ -15,6 +15,36 @@ export const getLicenceList = async (req, res) =>
     }
 }
 
+export const getLicenceListPage = async (req, res) =>
+{
+    const {skip, limit} = req.query;
+
+    try
+    {
+        const licenceList = await LicenceData.find({}, {}, { skip: skip, limit: limit });
+
+        res.status(200).json(licenceList);
+    }
+    catch(error)
+    {
+        res.status(404).json({message: error.message});
+    }
+}
+
+export const getLicenceListCount = async (req, res) =>
+{
+    try
+    {
+        const count = await LicenceData.count();
+
+        res.status(200).json(count);
+    }
+    catch(error)
+    {
+        res.status(404).json({message: error.message});
+    }
+}
+
 export const createLicence = async (req, res) =>
 {
     const requestLicence = new LicenceData(req.body);
