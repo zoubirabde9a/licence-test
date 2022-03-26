@@ -137,11 +137,11 @@ export const checkLicence = async (req, res) =>
 
 export const deleteLicence = async (req, res) =>
 {
-    const id = req.params.id;
+    const ref = req.params.ref;
 
     try
     {
-        await LicenceData.findByIdAndRemove(id).exec();
+        await LicenceData.findOneAndRemove({ref:ref}).exec();
         res.send('Success');
     }
     catch(error)

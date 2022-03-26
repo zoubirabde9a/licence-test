@@ -10,7 +10,7 @@ router.get('/', getLicenceList)
 router.post('/', createLicence)
 router.post('/activate/:ref/:serial', activateLicence)
 router.get('/check/:ref/:serial', checkLicence)
-router.delete('/:id', deleteLicence)
+router.delete('/:ref', deleteLicence)
 
 
 export default router;
