@@ -14,7 +14,7 @@ app.use(cors());
 
 app.use('/licence', licenceRoutes);
 
-const DB_CONNECTION_URL = 'mongodb://localhost:27017/licence-db';
+const DB_CONNECTION_URL = 'mongodb://localhost:27019/licence-db';
 const PORT = process.env.PORT || 5000;
 
 mongoose.connect(DB_CONNECTION_URL, {
