@@ -14,7 +14,7 @@ app.use(cors());
 
 app.use('/licence', licenceRoutes);
 
-const DB_CONNECTION_URL = 'mongodb+srv://admin:Maisonas=1@cluster0.hmntq.mongodb.net/licence-db?retryWrites=true&w=majority';
+const DB_CONNECTION_URL = 'mongodb://localhost:27017/licence-db';
 const PORT = process.env.PORT || 5000;
 
 mongoose.connect(DB_CONNECTION_URL, {
